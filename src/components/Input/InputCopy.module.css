@@ -1,0 +1,29 @@
+
+.input-copy__container:global(.ant-input-group) {
+    display: flex;
+}
+
+.input-copy__container :global(.ant-input) {
+    flex: 1 1 auto;
+    width: auto;
+}
+
+.float-label__container {
+    position: relative;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 12px;
+    top: 12px;
+    transition: 0.2s ease all;
+    z-index: 2;
+}
+
+.label-float {
+    top: 2px;
+    font-size: 8px;
+}

@@ -1,14 +1,15 @@
 import { Button, Input } from "antd";
-import s from "./InputCopy.module.css";
 import { CopyOutlined } from "@ant-design/icons";
 import React, { ChangeEvent, memo, useEffect, useState } from "react";
+import { FloatLabel } from "components/Input/FloatLabel";
 
 type PropsType = {
   value: string
   onChange: (value: string) => void
+  label?: string
 };
 
-const InputCopyRaw = ({ value, onChange }: PropsType) => {
+const InputCopyRaw = ({ value, onChange, label }: PropsType) => {
   const [state, setState] = useState(value);
 
   useEffect(() => {
@@ -26,14 +27,19 @@ const InputCopyRaw = ({ value, onChange }: PropsType) => {
   };
 
   return (
-    <Input.Group compact className={s["input-copy__container"]}>
+    <FloatLabel label={label} value={state}>
       <Input
+        size={"large"}
         value={state}
         onChange={onChangeHandler}
         onBlur={onBlur}
+        addonAfter={<Button
+          type={"text"}
+          icon={<CopyOutlined/>}
+          onClick={onCopy}
+        />}
       />
-      <Button icon={<CopyOutlined/>} onClick={onCopy}/>
-    </Input.Group>
+    </FloatLabel>
   );
 };
 
