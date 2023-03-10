@@ -1,0 +1,9 @@
+
+.input-copy__container:global(.ant-input-group) {
+    display: flex;
+}
+
+.input-copy__container > :global(.ant-input) {
+    flex: 1 1 auto;
+    width: auto;
+}
