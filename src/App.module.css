@@ -1,5 +1,23 @@
+body {
+    background: #f6f6f6;
+}
+
 .app {
     width: 100%;
-    padding: 10% 200px;
+    padding: 10% 5%;
     box-sizing: border-box;
+}
+
+.app > div {
+    background: #fff;
+    padding: 2% 5% 5%;
+
+}
+
+.addNewLine__container {
+    padding-top: 20px;
+}
+
+.editContainer {
+    padding-bottom: 20px;
 }

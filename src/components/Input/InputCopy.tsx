@@ -7,9 +7,10 @@ type PropsType = {
   value: string
   onChange: (value: string) => void
   label?: string
+  disabled?: boolean
 };
 
-const InputCopyRaw = ({ value, onChange, label }: PropsType) => {
+const InputCopyRaw = ({ value, onChange, label, disabled }: PropsType) => {
   const [state, setState] = useState(value);
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const InputCopyRaw = ({ value, onChange, label }: PropsType) => {
         value={state}
         onChange={onChangeHandler}
         onBlur={onBlur}
+        disabled={disabled}
         addonAfter={<Button
           type={"text"}
           icon={<CopyOutlined/>}
