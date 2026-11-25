@@ -8,7 +8,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.13",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/uuid": "^9.0.1",
@@ -24,15 +23,22 @@
     "zustand": "^4.3.6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "tsc --noEmit && eslint src --ext .js,.jsx,.ts,.tsx && vite build",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": ["vite.config.mjs"],
+        "parser": "espree",
+        "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+        "env": { "node": true }
+      }
     ]
   },
   "browserslist": {
@@ -46,5 +52,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "@vitejs/plugin-react-swc": "^4.3.3",
+    "browserslist": "^4.29.6",
+    "browserslist-to-esbuild": "^2.1.1",
+    "eslint": "8.35.0",
+    "terser": "^5.16.5",
+    "vite": "^7.3.8"
   }
 }
