@@ -28,20 +28,10 @@
     font-size: 8px;
 }
 
-:global(.ant-input-group-wrapper-disabled) + .label {
+.float-label__container:has(input:disabled) > .label {
     color: rgba(0, 0, 0, 0.25);
 }
 
 .label_input {
     margin-bottom: 5px;
-}
-.label_input :global(.ant-btn) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20px;
-}
-
-:global(.ant-input-group-wrapper-disabled) :global(.ant-btn) {
-    pointer-events: none;
 }
