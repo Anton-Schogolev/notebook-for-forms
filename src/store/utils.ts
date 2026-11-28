@@ -1,7 +1,7 @@
 export interface StateStorage {
-  getItem: (name: string) => unknown | Promise<unknown>;
-  setItem: (name: string, value: unknown) => void | Promise<void>;
-  removeItem: (name: string) => void | Promise<void>;
+  getItem: (name: string) => unknown | Promise<unknown>
+  setItem: (name: string, value: unknown) => void | Promise<void>
+  removeItem: (name: string) => void | Promise<void>
 }
 // export function createPersistStorage(getStorage: () => StateStorage) {
 //   let storage: StateStorage;

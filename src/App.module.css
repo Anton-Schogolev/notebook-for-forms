@@ -1,23 +1,22 @@
 body {
-    background: #f6f6f6;
+  background: #f6f6f6;
 }
 
 .app {
-    width: 100%;
-    padding: 10% 5%;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10% 5%;
+  box-sizing: border-box;
 }
 
 .app > div {
-    background: #fff;
-    padding: 2% 5% 5%;
-
+  background: #fff;
+  padding: 2% 5% 5%;
 }
 
 .addNewLine__container {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .editContainer {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
