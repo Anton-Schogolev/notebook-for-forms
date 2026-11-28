@@ -1,12 +1,12 @@
 # Notebook for Forms
 
-This React 18 and TypeScript app stores reusable form values in the browser. Users organize fields into tabs, edit their labels, and copy individual values to the clipboard.
+This React 19 and TypeScript app stores reusable form values in the browser. Users organize fields into tabs, edit their labels, and copy individual values to the clipboard.
 
 ## Working on the app
 
 - Start in `src/App.tsx` for tab selection, edit mode, and the field list. The active tab is selected after the saved notebook loads asynchronously.
 - Edit field controls in `src/components/Input/`. Both label and value editors keep a local draft and commit it on blur. The copy button reads the current draft.
-- Use Ant Design v5 components and the existing CSS Modules for component styles. Imports such as `components/Input/InputCopy` resolve from `src/`.
+- Use Ant Design v6 components and the existing CSS Modules for component styles. Imports such as `components/Input/InputCopy` resolve from `src/`.
 - Read notebook state through `useInputsStore` selectors and update it through `InputsStoreMethods` in `src/store/useInputsStore.ts`. Each tab ID is also the key for its array of fields.
 - When changing the stored format, account for existing notebooks. Zustand persists `tabs` and `inputs` through localForage under the key `inputs`. The current schema version is 1.
 
@@ -15,9 +15,9 @@ This React 18 and TypeScript app stores reusable form values in the browser. Use
 Run commands from the repository root.
 
 - `npm ci` installs dependencies from the lockfile for a fresh checkout.
-- `npm start` starts the Create React App development server.
-- `npm run build` creates the production bundle in `build/`.
-- `npm test -- --watchAll=false --runInBand` runs Jest once. The repo includes jest-dom setup in `src/setupTests.ts` but currently has no test files.
+- `npm start` starts Vite at `http://localhost:3000`.
+- `npm run build` checks TypeScript, lints the app with ESLint, and creates the production bundle in `build/`.
+- `npm test` runs Playwright tests in Chromium, starting Vite automatically. Run `npx playwright install chromium` to install the browser. Tests belong in `tests/`. There are currently no tests.
 
 # Development workflow
 
